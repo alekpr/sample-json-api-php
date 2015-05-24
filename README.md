@@ -6,5 +6,5 @@
 [more deail..](http://blogs.key-ative.com/2015/05/24/sample-json-api-with-php/)
 
 # Link
-My Site : [http://www.key-ative.com](http://www.key-ative.com)
-My Blogs : [http://blogs.key-ative.com](http://blogs.key-ative.com)
+My Site : [http://www.key-ative.com](http://www.key-ative.com).
+My Blogs : [http://blogs.key-ative.com](http://blogs.key-ative.com).
