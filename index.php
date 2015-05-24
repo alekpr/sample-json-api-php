@@ -12,5 +12,4 @@ $app->group('/v1',function() use ($app){
 		 $app->render(200,array("results"=>$class->get_by_id($id)));
 	});
 });
-
 $app->run();
