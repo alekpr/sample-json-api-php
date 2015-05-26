@@ -8,6 +8,7 @@ namespace Libs\MyClass;
 class Data extends Base {
 	private $data;
     public function __construct($class = __CLASS__) {
+    	parent::__construct();
 		/* Load data file into your application */
     	$this->data = require_once BASE_DIR."data/products.data.php";
     }
@@ -43,5 +44,6 @@ class Data extends Base {
     }
     public function __destruct(){
     	//nothing
+    	parent::__destruct();
     }
 }

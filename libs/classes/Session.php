@@ -13,20 +13,25 @@ class Session {
 	 * 
 	 * @param string $session_id
 	 */
-    public static function initialize($session_id = null){
+    public static function initialize($session_id = ""){
     	if (self::$initialized) {
     		return;
     	}
     	if (strlen($session_id) < 1) {
+    		session_cache_limiter(false);
     		session_start();
+    		self::$initialized = true;
+    		self::$sessionid = session_id();
             self::setSession('time',time());
     	}else{
     		session_id($session_id);
+    		session_cache_limiter(false);
     		session_start();
+    		self::$initialized = true;
     		self::$sessionid = $session_id;
             self::setSession('time',time());
     	}
-    	self::$initialized = true;
+    	
     	return;
     }
     /**
@@ -63,6 +68,6 @@ class Session {
    		self::$initialized = !session_destroy();
    		self::$sessionid = -1;
         unset( $_SESSION );    
-        return !self::initialized ;
+        return !self::$initialized ;
    	}
 }

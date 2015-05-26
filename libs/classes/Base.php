@@ -6,6 +6,7 @@ namespace Libs\MyClass;
  * @author Alek
  */
 class Base {
+	protected $_error = null;
     public function __construct($class = __CLASS__) {
     	//nothing
     }
@@ -28,6 +29,13 @@ class Base {
 	        }
 	    }
 	    return $results;
+	}
+	
+	public function get_error(){
+		return $this->_error;
+	}
+	public function set_error($error){
+		$this->_error = $error;
 	}
     public function __destruct(){
     	//nothing
